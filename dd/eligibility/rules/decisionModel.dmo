@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>db04f56a-dbe7-4cef-9d43-ca8366d377cd</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <decision id="node_1" name="Eligibility">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="Father Nationality"/>
+                <input bomType="java.lang.String" collection="false" name="Mother Nationality"/>
+                <output bomType="java.lang.String" collection="false" name="Eligibility"/>
+                <rule defaultRule="false" href="node_1/GetElgibility.dmt" kind="DecisionTable" name="GetElgibility"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Eligibility" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Father Nationality">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="Father Nationality"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Father Nationality" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_3" name="Mother Nationality">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="Mother Nationality"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_3_ii" name="Mother Nationality" typeRef="java.lang.String"/>
+    </inputData>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>
